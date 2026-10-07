@@ -65,73 +65,58 @@
 </div>
 		<!--next section -->
 
-<div class="reg-div temp b-image-2">
+<div class="reg-div temp b-image-3">
 
 
 
 <div class="explore-more-position temp zlevel5">
 
 <p class="font-size-1 font2" >
-Learn About Me
+Explore Projects!
 </p>
 
 </div>
 
 <div class="temp">
-<p class="fontcolorgrn code-dimensions opacity1">
+<p class="fontcolorgrn code-dimensions opacity1 lineheight2">
 
 using namespace std;
 
 // Function to create and output all permutations of the list of names.
 void PrintAllPermutations(const vector &permList, vector &nameList) {
     vector temppermList;
-    string tempRemoved;
+    string tempRemoved;  // declaring variables
 
-    if (permList.size() == 0) {
+    if (permList.size() == 0) { 
         for (const auto& name : nameList) {
             cout << name << " ";
         }
         cout << endl;
-
- </p> 
-</div>
-
-<div>
-<p class="fontcolorgrn code-dimensions opacity1">
-} else {
+    else {
         for (size_t i = 0; i < permList.size(); i++) {
             temppermList = permList;
-            tempRemoved = temppermList.at(i);
-            temppermList.erase(temppermList.begin() + i);
-            nameList.push_back(tempRemoved);
+            
+            tempRemoved = nameList.push_back(tempRemoved);
 
             PrintAllPermutations(temppermList, nameList);
 
             nameList.pop_back();
-</p>
+ </p> 
+</div>
 </div>
 
-<div class="temp mid-div<!--maybe not this size for middiv--!>">
-
-<div>
-</div>
-
-</div>
-
-
-</div>
+<!-- <div class="temp mid-div[[maybe not this size for middiv]]<div></div></div></div> -->
 
                   <!--next section -->
 
-<div class="reg-div">
+<div class="reg-div temp b-image-2">
 
 <p><pre>
 
 third section
 
 
-space to scroll 
-
+ Learn About Me
 
 space to scroll 
 

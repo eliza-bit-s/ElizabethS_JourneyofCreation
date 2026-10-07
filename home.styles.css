@@ -26,6 +26,13 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.b-image-3 {
+  background-image: url("images/p1.png");
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-size: cover;
+}
                        /*containers*/
 
 
@@ -156,7 +163,11 @@
 }
 
 .opacity1 {
-  opacity: .5;
+  opacity: .28;
+}
+
+.lineheight2 {
+  line-height: 2;
 }
 
 
@@ -199,7 +210,7 @@
 }
 
 .code-dimensions {
-  width: 20%;
+  width: 30%;
 }
 
 .mid-div  {
