@@ -51,12 +51,21 @@
   font-weight: normal;
 }
 
+.boldweight {
+  font-weight: 400;
+}
+
 .font2 {
   font-family: "Times New Roman";
 }
 
 .fontcolorgrn {
-  color: #32de84;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.greenborder {
+  border: solid;
+  border-color: rgba(174, 194, 137, 0.15);
 }
 
                          /*positioning*/
@@ -152,10 +161,77 @@
   transform: translate(-50%, -50%);
 }
 
+.whatsnextpositon {
+  text-align: center;
+  position: relative;
+  top: 13%; 
+}
+
+.findoutposition {
+  position: relative;
+  top: 5%;
+  left: 40%;
+}
+
+.findoutpadding {
+  padding-top: 1%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+}
+
+.labitposition {
+  position: relative;
+  top: 15%;
+  bottom: auto;
+  right: 6%;
+  left: auto;
+}
+
+.labitmargins {
+  margin-top: 20%;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.laboutmepadding {
+  padding-top: 3%;
+  padding-right: 4%;
+  padding-bottom: 3%;
+  padding-left: 4%;
+}
+
+.laboutmeposition {
+  position: relative;
+  top: 13%;
+  bottom: auto;
+  right: auto;
+  left: 15%;
+}
+
+.raposition {
+  position: relative;
+  top: 86px;
+  bottom: 5px;
+  right: 60%;
+  left: 15%;
+}
+
+
+
+
+
+
+
 
                      /* modifications */
 .zlevel5 {
   z-index: 5;
+}
+
+.zlevel4{
+  z-index: 4;
 }
 
 .zlevel1 {
@@ -163,7 +239,7 @@
 }
 
 .opacity1 {
-  opacity: .28;
+  opacity: .20;
 }
 
 .lineheight2 {
@@ -175,6 +251,13 @@
   border: solid;
   color: black;
 }
+
+.homeborders {
+  border: solid;
+  color: rgba(174, 194, 137, 0.20);
+}
+
+
                /* sizing (width and height) */
 
 .reg-div {
@@ -191,8 +274,8 @@
 }
 
 .header-size{
-  height: 105px;
-}
+  height: 130px;
+} 
 
 .nav-button-dimensions { 
   height:40px;
@@ -216,6 +299,23 @@
 .mid-div  {
   height: 300px;
 }
+
+.readingaid1 {
+  background-color: rgba(250, 248, 248, 0.8); /* 50% white background */
+  color: black;
+  width:500px;
+  padding-left: 20%;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.readingaid2 {
+  background-color: rgba(174, 194, 137, 0.6);
+  color: black;
+}
+
+
+
 
                       /* buttons */
 
