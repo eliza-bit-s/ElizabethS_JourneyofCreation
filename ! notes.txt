@@ -22,10 +22,6 @@ The majority of screen resolutions are at a 1024 × 768 px minimum and a 1920 ×
   -ms-transform: translate(-60%, -50%);
   transform: translate(-50%, -50%);;
 
-last updated 5/22, 
-
-project 3 = date converter <-update
-interactive fantasy game =/= finished
 
 Lorem ipsum sphiel:
 
