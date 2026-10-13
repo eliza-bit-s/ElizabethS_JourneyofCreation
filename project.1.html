@@ -52,35 +52,315 @@
     <!-- ARTICLE BEGINS HERE-->
 
        <div class="articlesizing">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed. Tellus at urna condimentum mattis. Bibendum est ultricies integer quis auctor. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Nulla aliquet porttitor lacus luctus accumsan tortor. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Volutpat consequat mauris nunc congue nisi vitae. Purus viverra accumsan in nisl nisi. Donec ac odio tempor orci dapibus. In dictum non consectetur a erat nam. Eu lobortis elementum nibh tellus molestie nunc. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Tincidunt dui ut ornare lectus sit. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. </p>
-  
+        <p> After a trend on tiktok took over my For You Page, I decided to put my own twist on it and translate the idea to an interactive python game. The general idea of the trend is still there despite the new mode of ingesting the media: a small fairytale story where the users decisions result in more positive or more negative outcomes based on the points they gain throughout the journey they're guided through. For my implementation, I decided that I'd stick to a singular storyline with the user being able to choose how and to what degree they interacted with the characters and events in the story as opposed to exposing the user to several different storylines with distinct endings like other famous, more advanced interactive games are praised for. </p>
+  #####cont here
   <p>Ac orci phasellus egestas tellus rutrum. Suspendisse in est ante in nibh mauris. Arcu risus quis varius quam. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Porttitor lacus luctus accumsan tortor. Odio morbi quis commodo odio. Vulputate enim nulla aliquet porttitor lacus luctus. Dictumst quisque sagittis purus sit amet volutpat consequat. Sed felis eget velit aliquet sagittis id consectetur. Aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Morbi tristique senectus et netus et malesuada. Diam sollicitudin tempor id eu. Ac auctor augue mauris augue neque. Enim neque volutpat ac tincidunt vitae semper quis lectus. Habitant morbi tristique senectus et. Neque sodales ut etiam sit amet nisl. In nisl nisi scelerisque eu ultrices vitae. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin.</p>
       </div>
       
       <div class="centering container4container">
    
         <div class="upperline-dims centering codenamebox">
-          <p class="textcolorwhite">Fantasy.py</p>
+          <p class="textcolorwhite">Fantasy_Game.py</p>
         </div>
         
         <p><pre class="overflowscroll codebox box-shadow codeboxposition centering terminaloutline" id="code2bcopied">
-  #!/usr/bin/env python
-  #fantasy_game.py
-  #interactive fantasy game: Rise to Wealth
-  #Elizabeth Suarez
-  
-  print("Rise to Wealth: an interactive fantasy game by Elizabeth Suarez")
-  
-  score = int(0)
-  
-  print("You are a common woman in the kingdom of Ipo.")
-  print("Your goal is to leave this life of poverty and walk into one of lavish.")
-  print("Will you meet your goal and survive or fail and perish?")
-  
-  
-  name = input("What is your name? ")
-  
-  print("Nice to meet you, " + name + "!")
+#!/usr/bin/env python
+#fantasy_game.py
+#interactive fantasy game: Rise to Wealth
+#Elizabeth Suarez
+
+
+
+def choice():
+    choice = "p"
+    while ( (choice != "A") and (choice != "B") and (choice != "C") ):
+        choice = (str(input("Enter your choice: A, B, or C? ")))[:1]
+        choice = choice.upper()
+        if (( (choice != "A") and (choice != "B") and (choice != "C") ) == True):
+            print("Invalid Answer. Please type one of the following: A, B, or C.")
+    return choice
+
+def show_score(score):
+    print("Current score:", score)
+
+def show_worstending():
+    print("'H-Hi,' you greet the Prince. 'Hello,' he replies,'I have a very important question to ask you.'")
+    print("'Anything' you reply eagerly,'Anything I can help you with, I will.' Your hearts beating fast in your chest and you feel your face get red. 'That's great,' the Prince says,'Where's the nearest restroom?'")
+    print("END. You earned the worst ending.")
+
+def show_decentending():
+    print("'H-Hello,' you greet the Prince. 'Good morning,' he replies,'I am awfully sorry that the guards were harsh with you.'")
+    print("'I strive to keep a peaceful Kingdom and hope to lead by example. This is unacceptable.' he continues,'Is there any way I can compensate you?'")
+    print("'Y-yes.' You struggle to get out. He's just as nice as his eyes are.'")
+    print("'Maybe monetarily?' he offers, and you nodd without caring about the outcome as long as it sounds positive.")
+    print("'Great!' he beams, then turns to a guard. 'Give her 50 shillings as compensation for being so rude.' the Prince commands,'We've talked about this before. I want you all on your best behavior.' Guards nod.")
+    print("Within minutes, a guard hands you a small purse with the monetary compensation. What a win! Money and a talk with the Prince. It must be your lucky day!")
+    print("END. You earned the decent ending.")
+
+
+def show_bestending():
+    print("'Good Morning Prince!' you greet the Prince warmly. 'Good morning,' he replies with a smile,'I was wondering if you knew of a place that served the best Kebabs. Do you know of any?")
+    print("Ah-Ah, Yes!' You reply quickly,'I actually do! Kebabs happen to be one of my favorite foods and I know of several places, but my favorite are 'DOM's CORNER' and--'")
+    print("'BOSS KEBAB?' he completes your sentence. 'Yes! I love BOSS! He makes the best Kebabs! His recipie is something-'")
+    print("'In that case..' the Prince mutters, then the gleam you thought you'd saw in his eyes before returns,'Would you mind introducing me personally?'")
+    print("'Of course!' you nearly shout. 'Lead the way then,' the Prince gestures with his hand, following your first steps.")
+    print("'Maybe,' you think,'this is the beginning of a great friendship!' You look over at the Prince, and he winks at you.")
+    print("You look away. Maybe a little more than a friendship!")
+    print("END. You earned the best ending.")
+
+def find_altendings(endtype):
+    not_endtype3= "D"
+    not_endtype2="W"
+    not_endtype1="B"
+    nty2 = "Worst"
+    nty3 = "Decent"
+    nty1 = "Best"
+    if (endtype == not_endtype1):
+        bool = "((opt != 'W') and (opt != 'D'))"
+        vars = [nty2, nty3]                             #update vars
+    elif (endtype == not_endtype2):
+        bool = "((opt != 'B') and (opt != 'D'))"
+        vars = [nty1, nty3]
+    else:
+        bool = "((opt != 'B') and (opt != 'W'))"
+        vars = [nty1, nty2]
+    return bool, vars
+    
+
+def opt_altendings(logic, specifics):
+    opt1, opt2 = specifics[0], specifics[1]             #update these
+    opt = "p"
+    print(logic)
+    while ( eval(logic) ): #conditional for user picking option failsafe
+        opt = (str(input("Enter your choice: " + opt1 + " or " + opt2 + "? ")))   #ask for ending
+        opt = opt.upper()[:1]
+        print(opt)
+        if ( (eval(logic)) == True):
+            print("Invalid Answer. Please type one of the following: " + opt1 + " or " + opt2 + ".")
+    return opt  #return ending type
+
+def ask_showaltends():    
+    choice1 = "p"       #question asking if want to see another alternate ending
+    while ( (choice1 != "YES") and (choice1 != "NO")  ):
+        choice1 = (str(input("Enter your choice: Yes or No? ")))[:3]
+        choice1 = choice1.upper()
+        if (( (choice1 != "YES") and (choice1 != "NO") ) == True):
+            print("Invalid Answer. Please type one of the following: Yes or No.")
+    return choice1
+
+def show_altendings(endtype):
+    print("\nThank you for playing! Would you like to see alternate endings? Reply Yes or No")
+    choice1 = ask_showaltends()
+    while (choice1 == "YES"):  #yes I want to see an alternate ending
+        bool2, spec_type = find_altendings(endtype)  #which alternate ending
+        ending_chosen = opt_altendings(bool2, spec_type) #user chooses ending
+        if ending_chosen == "W":                #showing ending chosen
+            print("Now showing: Worst Ending")
+            show_worstending()
+            print("Would you like to see one of two more alternate endings? Reply Yes or No.")
+            choice1 = ask_showaltends()
+
+        elif ending_chosen == "B":
+            print("Now showing: Best Ending")
+            show_bestending()
+            print("Would you like to see one of two more alternate endings? Reply Yes or No.")
+            choice1 = ask_showaltends()
+
+        else:
+            print("Now showing: Decent Ending")
+            show_decentending()
+            print("Would you like to see one of two more alternate endings? Reply Yes or No.")
+            choice1 = ask_showaltends()
+
+    else:
+        print("You may now exit the game.")
+        
+
+
+
+if __name__ == "__main__":
+    print("Rise to Wealth: an interactive fantasy game by Elizabeth Suarez")
+
+    score = int(0)
+
+    print("You are a common woman in the kingdom of Ipo.")
+    print("Your goal is to leave this life of poverty and walk into one of lavish.")
+    print("Will you meet your goal and survive or fail and remain a poor common woman?")
+
+
+    name = input("What is your name? ")
+
+    print("Nice to meet you, " + name + "!")
+
+    print("All your decisions from this point forward will either contribute or hinder you from reaching your goal.")
+    print("Current score:", score)
+    print("The higher your score, the better ending you recieve. Good luck!")
+
+    print("You wake up and get dressed. What do you wear?")
+    print(" A) a simple blue dress \n B) a long skirt with a blouse \n C) a long cardigain over a regular outfit")
+    player_choice = choice()
+
+    answerA = "A"
+    answerB = "B"
+    answerC = "C"
+
+    if player_choice == answerA:
+        score = score + 55
+        print("A stylish and beautiful answer. It's just perfect for the day!")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 45
+        print("The skirt billows around you, as if annoouncing your presence everywhere. Nice call!")
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 20
+        print("Playing it safe for the day! The cardigains a bit oversized, though...")
+        show_score(score)
+
+    print("Your mother has some errands for you to run. Quick! choose a bag to hold your money in!")
+    print(" A) a cloth goose purse \n B) a petite, black coinpurse \n C) a small leather satchel")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 12
+        print("You're out the door before you know it, but the purse kind of smells... Wait, was the goose once living?!")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 35
+        print("You're out the door before you know it, and you hold on for dear life to your skinny purse.")
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 37
+        print("You're out the door before you know it. This purse makes you feel safe and secure. Good choice!")
+        show_score(score)
+
+    print("You head to the street market and prepare yourself for bartering and-")
+    print('"' + name + '!"' + " You hear someone yell.")
+    print("You squint your eyes and see Zeke! Your childhood friend, the cobblers son. He beckons you over.")
+    print("What do you say?")
+    print(" A) Hey Z! \n B) Zeke! How have you been? \n C) *wink* Helloo hot stuff!")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 20
+        print("A classic answer. You can never go wrong with this one.")
+        show_score(score)
+        print("'Hey,'" + name + "'!' Zeke says, ")
+    elif player_choice == answerB:
+        score = score + 25
+        print("Thank you for showing you care about Zeke.")
+        show_score(score)
+        print("'I've been doing well,'" + name + "'!' Zeke says, ")
+    elif player_choice == answerC:
+        score = score - 30
+        print("You made him uncomfortable. -30 points >:( Shame on you.")
+        show_score(score)
+        print("'Anyways...' Zeke says, ")
+
+    print("'Have you heard? The Prince is coming to town today!'")    
+    print(" The Prince? How interesting! What will you reply to Zeke? \n A) 'Oooh- In that case, let's hope he buys from your stand, Z!' \n B) 'Really?! I hope to see him!' \n C) 'That's interesting. Any more news?'")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 7
+        print("'It'd be a dream..' Zeke trails off.")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 7
+        print("'Sounds like someone's excited,' Zeke smiles.")
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 2
+        print("'Nope. Thought the Prince visiting would surprise you. Are you ok, '"+ name +"?'")
+        show_score(score)
+        print("That didn't sound like you at all. Maybe you woke up on the wrong side of bed today?")
+
+    print("You and Zeke continue the conversation, talking shoes, recent events and the weather when suddenly-)")
+    print("'Look!' Zeke exclaims, pointing behind you, 'It's the Prince!")
+    print("You turn around, your hair flipping behind you to behold a carriage surrounded by armed guards on horses.")
+    print("You marvel at the sight, not having seen such a degree of luxury or extravagance before. It was... beautiful.")
+    print("Zeke marvels beside you, commenting on how crazy the display was. Say something!")
+    print("A) 'It could be better..' \n B) Too nervous, you stammer out, 'H-How do I look?' \n C) 'I've never seen anything like it...' You say.")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 3
+        print("Hey! Who's trying to make it out of poverty? Beggars can't be choosers! +3")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 13
+        print("'How do you look?' Zeke asks in disbelief,'How does the shop look?! I'm trying to make a sale here!'")
+        print("+13")
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 36
+        print(" 'Neither have I,' says Zeke. \n +36")
+        show_score(score)
+
+
+    print("The carriage comes to a stop, several feet away from Zekes fathers shop. A guard or two shout for the public to give the group space.")
+    print("A guard approaches, then opens the carriage door. From inside, the Prince steps out. He's marvelous...")
+    print("You turn to Zeke, and-")
+    print(" A) fix your hair, and smooth your clothes down, asking Zeke, 'Do I look ok?' \n B) comment,'He's not thaat impressive, Zeke.' C) you stutter more. The Prince is a total dream boy! 'I have to get a closer look!' you tell Zeke.")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 42
+        print("'You genuinely look the same as yesterday.' Zeke replies. How rude! +42")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 27
+        print("'Was it the giant carriage or the armed men that you found dull? Honestly, " + name + ", you're crazy for thinking that! I'd give up a years salary to travel like that!")
+        print("You were judgy. +27")  
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 68
+        print("You don't wait for Zekes response. You prioritize catching an up close and personal glimpse of the Prince first.")
+        print("+68 for prioritizing your own goals.")
+        show_score(score)
+
+    print("You get closer to the carriage...")
+    print("The Prince begins stepping down, assessing his surroundings... For a second, you think you see a glimmer in his eyes.")
+    print("'Wow,' you think,'If only I could meet him..'")
+    print("Do you: \n A) Continue to watch him. \n B) Shout,'Hey over here!' C) Yawn")
+    player_choice = choice()
+
+    if player_choice == answerA:
+        score = score + 95
+        print("Nice job being respectful of the Prince and his space. +95")
+        show_score(score)
+    elif player_choice == answerB:
+        score = score + 44
+        print("You wasted absolutely no time in showing you are the Princes absolute Number One Fan. Maybe you should invest in making a fan club for him?")
+        print("+44 for staying true to yourself, tiger.")
+        show_score(score)
+    elif player_choice == answerC:
+        score = score + 0
+        print("You must be sleepy! +0")
+        show_score(score)
+
+    print("The guards surrounding the Prince push the crowd, you included, outward. They are rough and you feel frustrated. They could have asked you to move!")
+    print("You vocalize a few of your concerns, getting the Princes attention. You gasp. He's heading this way!! This could be your fairytale ending!")
+    print("The prince asks the guards to part so he can speak to you. Obeying, the guards stand aside, allowing you to truly be face to face with the Prince.")
+
+    print("\n This is where your score matters. Your score determines the nature of your fairytale ending.")
+
+    print("Your final score: ", score)      
+
+    if (score < 121):
+        show_worstending()
+        endtype = "W"
+    if ((score > 119) and (score < 241)):
+        show_decentending()
+        endtype = "D"
+    else:
+        show_bestending()
+        endtype = "B"
+
+    show_altendings(endtype)
+
+
+ 
   
    </pre></p>
   
@@ -89,20 +369,16 @@
       </div>
       </div>
   
+
+
     <div class="articlesizing">
+          <div class="centering skip-button-dims">
+         <a href="https://www.programiz.com/python-programming/online-compiler/"><button class="skip-button rounded-style copy-button-visuals">Try code out! ➞</button></a>
+          </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed. Tellus at urna condimentum mattis. Bibendum est ultricies integer quis auctor. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Nulla aliquet porttitor lacus luctus accumsan tortor. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Volutpat consequat mauris nunc congue nisi vitae. Purus viverra accumsan in nisl nisi. Donec ac odio tempor orci dapibus. In dictum non consectetur a erat nam. Eu lobortis elementum nibh tellus molestie nunc. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Tincidunt dui ut ornare lectus sit. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. </p>
       </div>
   
-    <div class="container4container2 centering tutorial-beginning-position addmarginbelow"> 
-      <div class="articlesizing centering">
-        <p>In case you don't know how to use the compiler, enjoy the small tutorial below. If you do know how to use a compiler, click the button below to go straight to the compiler.</p>
-     
-      </div>
-    
-      <div class="centering skip-button-dims">
-        <a href="#https://www.programiz.com/python-programming/online-compiler/"><button class="skip-button rounded-style copy-button-visuals">Skip Tutorial⬇</button></a>
-      </div>
-    </div>
+ 
 
 
 
